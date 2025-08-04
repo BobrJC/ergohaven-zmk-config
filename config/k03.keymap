@@ -13,13 +13,13 @@
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
 
-        shift_caps_word: shift_caps_word {
+        shift_caps_word: sh_cps {
             compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_CAPS_WORD";
+            label = "SHIFT_C";
             #binding-cells = <0>;
             bindings = <&sk LEFT_SHIFT>, <&caps_word>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
     };
 
