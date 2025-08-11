@@ -94,7 +94,7 @@
 &trans  &kp TAB         &kp Q         &kp W         &kp E         &kp R                              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F                              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LCTRL       &kp X         &kp C         &kp V         &kp B         &trans       &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans        &trans        &trans        &kp Z         &kp SPACE    &trans  &trans  &trans  &trans  &trans
+                        &trans        &trans        &kp Z         &kp LEFT_ALT  &kp SPACE    &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
