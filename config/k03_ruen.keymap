@@ -210,6 +210,8 @@
 &trans  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V     &kp B        &trans  &trans  &trans  &trans  &trans  &trans  &trans
                    &trans  &trans  &trans  &kp LALT  &kp SPACE    &trans  &trans  &trans  &trans  &trans
             >;
+
+            label = "game";
         };
     };
 };
