@@ -12,6 +12,34 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
         };
+
+        sh_caps: sh_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SH_CAPS";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+        };
+
+        ctrl_sp: ctrl_sp {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRL_SP";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp LC(SPACE)>;
+        };
+
+        alt_ru: alt_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_RU";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&layer_ru>;
+        };
+
+        alt_en: alt_en {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_EN";
+            #binding-cells = <0>;
+            bindings = <&kp RALT>, <&layer_en>;
+        };
     };
 
     combos {
@@ -91,11 +119,11 @@
 
         en {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSLH
-&kp TAB    &kp A   &kp S     &kp D     &kp F      &kp G                           &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp LBKT     &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &mo 2   &kp SPACE    &kp ENTER  &mo 3   &kp RCTRL  &kp RALT   &kp RGUI
+&kp GRAVE  &kp N1  &kp N2    &kp N3   &kp N4    &kp N5                          &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp ESC    &kp Q   &kp W     &kp E    &kp R     &kp T                           &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
+&kp TAB    &kp A   &kp S     &kp D    &kp F     &kp G                           &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X     &kp C    &kp V     &kp B   &kp LBKT     &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+                   &kp LGUI  &alt_ru  &ctrl_sp  &mo 2   &kp SPACE    &kp ENTER  &mo 3   &sh_caps  &alt_en    &kp RGUI
             >;
 
             display-name = "Base";
@@ -166,12 +194,22 @@
             bindings = <
 &bootloader  &trans  &trans  &trans  &trans  &trans                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL
 &trans       &trans  &trans  &trans  &trans  &trans                    &trans        &trans        &trans            &trans        &trans        &studio_unlock
-&trans       &trans  &trans  &trans  &trans  &trans                    &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &trans        &trans
+&trans       &trans  &trans  &trans  &trans  &to 6                     &out OUT_BLE  &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &trans        &trans
 &trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans  &out OUT_USB  &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT    &trans        &trans
                      &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans            &trans
             >;
 
             display-name = "Adjust";
+        };
+
+        game {
+            bindings = <
+&trans  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4                         &trans  &trans  &trans  &trans  &trans  &to 0
+&trans  &kp TAB    &kp Q   &kp W   &kp E   &kp R                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp A   &kp S   &kp D   &kp F                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V     &kp B        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                   &trans  &trans  &trans  &kp LALT  &kp SPACE    &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
