@@ -220,7 +220,7 @@
 &trans  &kp TAB  &kp A     &kp UP    &kp S      &kp D                     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp C    &kp LEFT  &kp DOWN  &kp RIGHT  &kp F                     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &kp V     &kp I     &kp M      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans    &trans    &kp Q      &kp X   &kp Z     &trans  &trans  &trans  &trans  &trans
+                 &trans    &trans    &kp Q      &kp X   &kp Z     &kp X   &kp V   &trans  &trans  &trans
             >;
 
             label = "blyaGame";
